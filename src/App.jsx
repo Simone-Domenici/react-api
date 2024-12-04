@@ -16,7 +16,7 @@ const App = () => {
   function fetchPosts() {
     axios.get(`${API_BASE_URI}posts`,{
       params: {
-        limit: 3
+        limit: 10
       },
     })
     .then(res => {
@@ -50,13 +50,29 @@ const App = () => {
   }, [posts]);
 
   const handleAddPost = (newPost) => {
-    setPosts([
-      ...posts,
-      {
-        id: posts.length + 1,
-        ...newPost,
-      },
-    ]);
+    // setPosts([
+    //   ...posts,
+    //   {
+    //     id: posts.length + 1,
+    //     ...newPost,
+    //   },
+    // ]);
+    axios.post(`${API_BASE_URI}posts`,newPost)
+      .then(res => {
+        console.log(res)
+        setPosts([...posts,res.data])
+        setFormState({
+          title: '',
+          image: '',
+          content: '',
+          tags: '',
+          published: false,
+          author: '',
+          category: '',})
+      }).catch(err => {
+        alert(err.response.data.messages.join(' '))
+        console.error(err)
+      })
   };
 
   const handleDelete = (id) => {

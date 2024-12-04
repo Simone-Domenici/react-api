@@ -9,7 +9,7 @@ const Post = ({ post, onDelete, onEdit}) => {
   const [newTitle, setNewTitle] = useState(post.title);
 
   const getImage = (image) => {
-    return image ? API_BASE_URI+ 'imgs/posts/' + image : 'https://via.placeholder.com/600x400'; // Immagine di placeholder
+    return image ? API_BASE_URI+ 'imgs/posts/' + image : 'https://picsum.photos/id/600/400'; // Immagine di placeholder
   };
 
   const colorMap = {
