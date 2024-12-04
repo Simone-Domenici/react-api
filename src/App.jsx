@@ -4,11 +4,33 @@ import Post from './components/Post.jsx'
 import Footer from './components/Footer.jsx'
 import Form from './components/Form.jsx';
 import styles from './App.module.css';
+import axios from 'axios'
 // import { posts as initialPosts} from './data/posts.js';
+
+export const API_BASE_URI = 'http://localhost:3000/'
 
 const App = () => {
   const [posts, setPosts] = useState([]);
   const [uniqueTags, setUniqueTags] = useState([]);
+
+  function fetchPosts() {
+    axios.get(`${API_BASE_URI}posts`,{
+      params: {
+        limit: 3
+      },
+    })
+    .then(res => {
+      console.log(res)
+      setPosts(res.data)
+    })
+    .catch(err => {
+      console.error(err)
+    })
+  }
+
+  useEffect(() => {
+    fetchPosts()    
+  },[])
   
   // Funzione per calcolare i tag unici
   const getUniqueTags = (posts) => {

@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import styles from './Post.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { API_BASE_URI } from '../App';
 
 const Post = ({ post, onDelete, onEdit}) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newTitle, setNewTitle] = useState(post.title);
 
   const getImage = (image) => {
-    return image || 'https://via.placeholder.com/600x400'; // Immagine di placeholder
+    return image ? API_BASE_URI+ 'imgs/posts/' + image : 'https://via.placeholder.com/600x400'; // Immagine di placeholder
   };
 
   const colorMap = {
