@@ -1,0 +1,96 @@
+.post {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 50%;
+    flex-wrap: wrap;
+  }
+  
+.postImage {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.postContent {
+  padding:0 10px;
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+      h2,
+      p{
+      padding: 10px 0;
+      }
+          
+}
+.readMoreButton{
+  background-color: #DAA521;
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-bottom: 10px;
+}
+.tags{
+  display: inline-block;
+  padding: 5px;
+  margin-right: 0.5rem;
+}
+.postActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.deleteIcon {
+  color: red;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.deleteIcon:hover {
+  color: darkred;
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.saveButton {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.saveButton:hover {
+  background-color: #218838;
+}
+.editContent{
+  margin: 1rem 0;
+  padding: 5px;
+  background-color: #ededed;
+}
+
+.editBtn{
+  margin-bottom: 0.5rem;
+  background-color: black;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 5px;
+}
+
+.category {
+  background-color: #7DF9FF;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
