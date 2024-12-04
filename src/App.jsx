@@ -16,7 +16,7 @@ const App = () => {
   function fetchPosts() {
     axios.get(`${API_BASE_URI}posts`,{
       params: {
-        limit: 10
+        limit: 3
       },
     })
     .then(res => {
@@ -76,7 +76,15 @@ const App = () => {
   };
 
   const handleDelete = (id) => {
-    setPosts(posts.filter(post => post.id !== id));
+    // setPosts(posts.filter(post => post.id !== id));
+    axios.delete(`${API_BASE_URI}posts/${id}`)
+    .then(() => {
+      fetchPosts()
+    })
+    .catch(err => {
+      console.error(err)
+      alert('Non è stato possibile eliminare il post selezionato.')
+    })
   };
 
   const handleEdit = (id, newTitle) => {
