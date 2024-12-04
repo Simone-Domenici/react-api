@@ -4,10 +4,10 @@ import Post from './components/Post.jsx'
 import Footer from './components/Footer.jsx'
 import Form from './components/Form.jsx';
 import styles from './App.module.css';
-import { posts as initialPosts} from './data/posts.js';
+// import { posts as initialPosts} from './data/posts.js';
 
 const App = () => {
-  const [posts, setPosts] = useState(initialPosts);
+  const [posts, setPosts] = useState([]);
   const [uniqueTags, setUniqueTags] = useState([]);
   
   // Funzione per calcolare i tag unici
